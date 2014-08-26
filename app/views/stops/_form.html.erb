@@ -1,5 +1,8 @@
 <%= form_for(@stop) do |f| %>
-  <div class="form-group"></div>
+  <div class="form-group">
+    <%= f.text_field :time, placeholder: "Time" %>
+  </div>
+  <div class="form-group">
     <%= f.collection_select :station_id, Station.all, :id, :name %>
   </div>
   <div class="form-group">

@@ -5,6 +5,9 @@
 <ul>
   <% @line.stations.each do |station| %>
     <li><%= station.name %></li>
+        <% station.stops.each do |stop| %>
+            <li><%= stop.time.strftime("%H:%M") %></li>
+        <% end %>
   <% end %>
 </ul>
 
