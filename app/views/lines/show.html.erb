@@ -4,7 +4,7 @@
 <h3>All Stations for this line</h3>
 <ul>
   <%array =[]%>
-  <% @line.stops.each do |stop| %>
+  <% @line.stops.order('name').each do |stop| %>
     <% unless array.include? stop.station.name %>
       <li><%= stop.station.name %></li>
       <% if stop.time %>

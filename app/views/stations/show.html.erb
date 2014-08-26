@@ -3,7 +3,7 @@
 
 <h3>All Lines for this station</h3>
 <ul>
-  <% @station.lines.each do |line| %>
+  <% @station.lines.order('name').each do |line| %>
     <li><%=line.name %></li>
   <% end %>
 </ul>
