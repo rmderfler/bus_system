@@ -1,0 +1,13 @@
+<%= content_for(:title, "New Bus | Bus Timetables") %>
+
+<%= render("layouts/errors", :object => @bus) %>
+
+<%= form_for(@bus) do |f| %>
+  <div class="form-group">
+    <%= f.text_field :number, placeholder: "Number" %>
+  </div>
+  <div class="form-group">
+    <%= f.collection_select :line_id, Line.all, :id, :name %>
+  </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

@@ -1,0 +1,10 @@
+<% content_for(:title, "New bus | Buses") %>
+<h1><%= @bus.number %></h1>
+
+<h3>This bus is assigned to the following line:</h3>
+<p><%= @bus.line.name %></p>
+<p><%= link_to "Edit", edit_bus_path(@bus), :class => "btn btn-default" %></p>
+<p><%= link_to "Delete", bus_path(@bus),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"},
+                         :class => "btn btn-danger" %></p>

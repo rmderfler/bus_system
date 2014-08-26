@@ -1,0 +1,8 @@
+<h1>All Stations</h1>
+<ul>
+  <% @stations.each do |station| %>
+  <li><a href="<%= station_path(station)%>"><%= station.name %></a></li>
+  <% end %>
+</ul>
+
+<%= link_to "New station", new_station_path, :class=> "btn btn-default" %>

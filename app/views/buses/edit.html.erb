@@ -1,0 +1,8 @@
+<%= content_for(:title, "Update Bus | Bus Timetables") %>
+
+<%= render("layouts/errors", :object => @bus) %>
+
+<%= form_for(@bus) do |f| %>
+  <%= f.collection_select :line_id, Line.all, :id, :name %>
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>
