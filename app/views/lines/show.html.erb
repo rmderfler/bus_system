@@ -3,11 +3,19 @@
 
 <h3>All Stations for this line</h3>
 <ul>
-  <% @line.stations.each do |station| %>
-    <li><%= station.name %></li>
-        <% station.stops.each do |stop| %>
-            <li><%= stop.time.strftime("%H:%M") %></li>
-        <% end %>
+  <%array =[]%>
+  <% @line.stops.each do |stop| %>
+    <% unless array.include? stop.station.name %>
+      <li><%= stop.station.name %></li>
+      <% if stop.time %>
+        <li><%= stop.time.strftime("%H:%M") %></li>
+      <% end %>
+      <% array << stop.station.name %>
+    <%else %>
+      <% if stop.time %>
+        <li><%= stop.time.strftime("%H:%M") %></li>
+      <% end %>
+    <% end %>
   <% end %>
 </ul>
 
